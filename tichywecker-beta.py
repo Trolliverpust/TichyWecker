@@ -71,7 +71,7 @@ def zeitsetzen(pin):
         drei_aussagen("einstellung_ende.mp3",stundenzeiten[stundenzeiger],minutenzeiten[minutenzeiger])
         bearbeitungsmodus = False
         weckstunde = stundenzeiger + 5
-        weckminute = (minutenzeiger+1)*5
+        weckminute = ((minutenzeiger+1)*5)%60
         print(weckstunde, weckminute)
         if weckstunde == 8 and weckminute == 0:
             eine_aussage("dieArbeitbeginntum8Uhr.mp3")
