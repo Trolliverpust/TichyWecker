@@ -66,7 +66,7 @@ def uhrzeitansagen(pin):
 
 @phatbeat.on(phatbeat.BTN_FASTFWD)
 def zeitsetzen(pin):
-    global bearbeitungsmodus, weckstunde, weckminute, stundenzeiger, minutenzeiger
+    global bearbeitungsmodus, weckstunde, weckminute, stundenzeiger, minutenzeiger, heuteschongeweckt
     if bearbeitungsmodus:
         drei_aussagen("einstellung_ende.mp3",stundenzeiten[stundenzeiger],minutenzeiten[minutenzeiger])
         heuteschongeweckt = False
