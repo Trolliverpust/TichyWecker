@@ -69,6 +69,7 @@ def zeitsetzen(pin):
     global bearbeitungsmodus, weckstunde, weckminute, stundenzeiger, minutenzeiger
     if bearbeitungsmodus:
         drei_aussagen("einstellung_ende.mp3",stundenzeiten[stundenzeiger],minutenzeiten[minutenzeiger])
+        heuteschongeweckt = False
         bearbeitungsmodus = False
         weckstunde = stundenzeiger + 5
         weckminute = ((minutenzeiger+1)*5)%60
@@ -84,7 +85,7 @@ def zeitsetzen(pin):
 
     else:
         bearbeitungsmodus = True
-        drei_aussagen("aktuelleUhrzeit.mp3",stundenzeiten[weckstunde-5],minutenzeiten[(weckminute//5)-1])
+        drei_aussagen("aktuelleUhrzeit.mp3",stundenzeiten[stundenzeiger],minutenzeiten[minutenzeiger])
         eine_aussage("einstellung_start.mp3")
 
 @phatbeat.on(phatbeat.BTN_VOLUP)
